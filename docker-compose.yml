@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+
+  workoutly-web:
+    build:
+      context: ./
+      target: workoutly-web
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
