@@ -1,11 +1,11 @@
 version: '3.8'
 services:
   workoutly-web:
-    build:
-      context: ./
-      target: workoutly-web
+    container_name: workoutly-web
+    build: .
+    command: npm run dev
     ports:
-      - 3000:3000
+      - '3000:3000'
     volumes:
       - .:/app
       - /app/node_modules
