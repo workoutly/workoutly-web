@@ -42,7 +42,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: 'warning.primary' }}>
+    <AppBar position="fixed" sx={{ bgcolor: 'warning.primary' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link href="/">
