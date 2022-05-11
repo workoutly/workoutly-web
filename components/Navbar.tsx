@@ -121,7 +121,7 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Ajustes">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="" src="" />
+                <Avatar alt="" src="/nanoseco.png" />
               </IconButton>
             </Tooltip>
             <Menu
