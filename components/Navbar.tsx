@@ -17,8 +17,8 @@ const Navbar = () => {
   const title = 'Workoutly';
 
   const pages = [
-    { name: 'Todas las rutinas', path: '/' },
-    { name: 'Mis rutinas', path: '/myroutines' },
+    { name: 'Todas las rutinas', path: '/routines' },
+    { name: 'Mis rutinas', path: '/' },
   ];
 
   const settings = [{ name: 'Cerrar sesión', action: () => {} }];
@@ -42,7 +42,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" sx={{ bgcolor: 'warning.primary' }}>
+    <AppBar position="sticky" sx={{ bgcolor: 'warning.primary' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link href="/">
