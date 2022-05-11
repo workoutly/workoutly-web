@@ -199,3 +199,18 @@ p .section {
   position: relative;
   float: left;
 }
+
+.routineDetails {
+  margin-top: 50px;
+}
+
+.saveRoutineButton {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.goBack {
+  display: flex;
+  margin-bottom: 20px;
+}
