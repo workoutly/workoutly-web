@@ -19,8 +19,8 @@ const RoutineDetails = () => {
         name: 'press banca',
         description: 'to fuerte',
         image: '',
-        muscles: ['Pecho', 'Hombros'],
-        workoutSettings: [
+        muscles: [{ name: 'Pecho' }, { name: 'Biceps' }],
+        settings: [
           {
             name: 'kgs',
             value: 80,
@@ -36,8 +36,8 @@ const RoutineDetails = () => {
         name: 'sentadilla',
         description: 'piernas gucci',
         image: '',
-        muscles: ['Glúteos', 'Abductores', 'Adcutores'],
-        workoutSettings: [
+        muscles: [{ name: 'Pierna' }],
+        settings: [
           {
             name: 'kgs',
             value: 100,
@@ -81,9 +81,11 @@ const RoutineDetails = () => {
                   {workout.name}
                 </TableCell>
                 <TableCell align="left">{workout.description}</TableCell>
-                <TableCell align="left">{workout.muscles.map((muscle) => `${muscle} `)}</TableCell>
                 <TableCell align="left">
-                  {workout.workoutSettings.map(
+                  {workout.muscles.map((muscle) => `${muscle.name} `)}
+                </TableCell>
+                <TableCell align="left">
+                  {workout.settings.map(
                     (workoutSetting) => `${workoutSetting.value}${workoutSetting.name} `
                   )}
                 </TableCell>
