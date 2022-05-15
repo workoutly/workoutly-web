@@ -71,7 +71,7 @@ const RoutineDetails = () => {
         </Table>
       </TableContainer>
       <div className={styles.saveRoutineButton}>
-        <Button variant="contained">Guardar rutina</Button>
+        <Button variant="contained">Añadir ejercicio</Button>
       </div>
     </>
   );
