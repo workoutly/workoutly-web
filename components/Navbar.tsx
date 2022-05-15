@@ -16,10 +16,7 @@ import Link from 'next/link';
 const Navbar = () => {
   const title = 'Workoutly';
 
-  const pages = [
-    { name: 'Todas las rutinas', path: '/routines' },
-    { name: 'Mis rutinas', path: '/' },
-  ];
+  const pages = [{ name: 'Todas mis rutinas', path: '/routines' }];
 
   const settings = [{ name: 'Cerrar sesión', action: () => {} }];
 
