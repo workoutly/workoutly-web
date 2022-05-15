@@ -17,7 +17,6 @@ import Autocomplete from '@mui/material/Autocomplete';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { flexbox } from '@mui/system';
 
 const RoutineDetails = () => {
   const router = useRouter();
