@@ -187,7 +187,7 @@ p .section {
   margin: 0 0 0 -800px;
   position: relative;
   -webkit-animation-name: slide_animation;
-  -webkit-animation-duration: 33s;
+  -webkit-animation-duration: 22s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
   -webkit-animation-play-state: running;
