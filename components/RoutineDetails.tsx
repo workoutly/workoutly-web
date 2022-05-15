@@ -9,47 +9,25 @@ import styles from '../styles/Home.module.css';
 import { Button } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 const RoutineDetails = () => {
   const router = useRouter();
-  const routine = {
-    workout: [
-      {
-        id: 1,
-        name: 'press banca',
-        description: 'to fuerte',
-        image: '',
-        muscles: [{ name: 'Pecho' }, { name: 'Biceps' }],
-        settings: [
-          {
-            name: 'kgs',
-            value: 80,
-          },
-          {
-            name: 'reps',
-            value: 10,
-          },
-        ],
-      },
-      {
-        id: 2,
-        name: 'sentadilla',
-        description: 'piernas gucci',
-        image: '',
-        muscles: [{ name: 'Pierna' }],
-        settings: [
-          {
-            name: 'kgs',
-            value: 100,
-          },
-          {
-            name: 'reps',
-            value: 20,
-          },
-        ],
-      },
-    ],
-  };
+  const [workouts, setWorkouts] = useState<any[]>();
+
+  useEffect(() => {
+    const getWorkouts = async () => {
+      const res = await fetch(`http://localhost:3333/workout`, {
+        method: 'GET',
+      });
+      const data = await res.json();
+      setWorkouts(data);
+    };
+    getWorkouts();
+  }, []);
+
+  console.log(workouts);
+
   return (
     <>
       <div className={styles.goBack}>
@@ -72,22 +50,20 @@ const RoutineDetails = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {routine.workout.map((workout) => (
+            {workouts?.map((workout) => (
               <TableRow
-                key={workout.name}
+                key={workout._id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {workout.name}
+                  {workout._name}
                 </TableCell>
-                <TableCell align="left">{workout.description}</TableCell>
+                <TableCell align="left">{workout._description}</TableCell>
                 <TableCell align="left">
-                  {workout.muscles.map((muscle) => `${muscle.name} `)}
+                  {workout._muscles.map((muscle) => `${muscle.name} `)}
                 </TableCell>
                 <TableCell align="left">
-                  {workout.settings.map(
-                    (workoutSetting) => `${workoutSetting.value}${workoutSetting.name} `
-                  )}
+                  {workout._settings.map((setting) => `${setting._value}${setting._name} `)}
                 </TableCell>
               </TableRow>
             ))}
