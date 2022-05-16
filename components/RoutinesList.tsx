@@ -18,7 +18,7 @@ const RoutinesList = () => {
 
   useEffect(() => {
     const getRoutines = async () => {
-      const res = await fetch(`http://workoutly-api.aulasoftwarelibre.uco.es/routines`, {
+      const res = await fetch(`https://workoutly-api.aulasoftwarelibre.uco.es/routines`, {
         method: 'GET',
       });
       const data = await res.json();
