@@ -1,11 +1,6 @@
 import Card from '@mui/material/Card';
-import { CardActions, useStepperContext } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import { TextField } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -13,13 +8,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Autocomplete from '@mui/material/Autocomplete';
-import styles from '../styles/Home.module.css';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Button } from '@mui/material';
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
-import { useEffect, useState } from 'react';
 
 const RoutineCard = ({ routine }) => {
   const router = useRouter();
@@ -54,10 +44,10 @@ const RoutineCard = ({ routine }) => {
                     </TableCell>
                     <TableCell align="left">{workout.description}</TableCell>
                     <TableCell align="left">
-                      {workout.muscles.map((muscle) => `${muscle.name} `)}
+                      {workout.muscles.map((muscle) => `${muscle.name}`)}
                     </TableCell>
                     <TableCell align="left">
-                      {workout.settings.map((setting) => `${setting.value}${setting.name} `)}
+                      {workout.settings.map((setting) => `${setting.name}`)}
                     </TableCell>
                   </TableRow>
                 ))}
