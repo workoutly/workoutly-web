@@ -74,7 +74,8 @@ const AddRoutineForm = () => {
         },
         body: JSON.stringify(newRoutine),
       });
-      const data = await res.json();
+      const data = await res.text();
+      return data;
     };
     postRoutine();
   };
