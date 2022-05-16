@@ -39,7 +39,12 @@ const RoutinesList = () => {
 
   return (
     <Box sx={{ flexGrow: 1, m: 8 }}>
-      <Grid container spacing={{ xs: 1, sm: 2, md: 3 }} columns={{ xs: 1, sm: 8, md: 12 }}>
+      <Grid
+        justifyContent={'center'}
+        container
+        spacing={{ xs: 1, sm: 2, md: 3 }}
+        columns={{ xs: 1, sm: 8, md: 12 }}
+      >
         {routines?.map((routine) => (
           <RoutineCard key={routine._id} routine={routine} />
         ))}

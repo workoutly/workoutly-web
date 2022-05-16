@@ -26,15 +26,15 @@ const RoutineCard = ({ routine }) => {
 
   return (
     <>
-      <Grid item xs={2} sm={4} md={4}>
-        <Card sx={{ display: 'inline-block' }}>
+      <Grid item sm={12} md={5}>
+        <Card>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {routine._name}
             </Typography>
           </CardContent>
           <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
                   <TableCell>Nombre</TableCell>
