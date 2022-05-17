@@ -16,6 +16,10 @@ const AddRoutineForm = () => {
   const [newRoutineSettings2, setNewRoutineSettings2] = useState('');
   const [newRoutineSettings3, setNewRoutineSettings3] = useState('');
   const [newRoutineSettings4, setNewRoutineSettings4] = useState('');
+  const [newRoutineDescription1, setNewRoutineDescription1] = useState('');
+  const [newRoutineDescription2, setNewRoutineDescription2] = useState('');
+  const [newRoutineDescription3, setNewRoutineDescription3] = useState('');
+  const [newRoutineDescription4, setNewRoutineDescription4] = useState('');
 
   const workouts = [
     { label: 'Press de banca', muscle: 'Pectoral' },
@@ -40,7 +44,7 @@ const AddRoutineForm = () => {
           {
             id: crypto.randomUUID(),
             name: newRoutineWorkout1,
-            description: '-',
+            description: newRoutineDescription1,
             muscles: [
               {
                 name: workouts.find((w) => w.label === newRoutineWorkout1)?.muscle,
@@ -55,7 +59,7 @@ const AddRoutineForm = () => {
           {
             id: crypto.randomUUID(),
             name: newRoutineWorkout2,
-            description: '-',
+            description: newRoutineDescription2,
             muscles: [
               {
                 name: workouts.find((w) => w.label === newRoutineWorkout2)?.muscle,
@@ -70,7 +74,7 @@ const AddRoutineForm = () => {
           {
             id: crypto.randomUUID(),
             name: newRoutineWorkout3,
-            description: '-',
+            description: newRoutineDescription3,
             muscles: [
               {
                 name: workouts.find((w) => w.label === newRoutineWorkout3)?.muscle,
@@ -85,7 +89,7 @@ const AddRoutineForm = () => {
           {
             id: crypto.randomUUID(),
             name: newRoutineWorkout4,
-            description: '-',
+            description: newRoutineDescription4,
             muscles: [
               {
                 name: workouts.find((w) => w.label === newRoutineWorkout4)?.muscle,
@@ -147,6 +151,13 @@ const AddRoutineForm = () => {
               renderInput={(params) => <TextField {...params} label="Ejercicio" />}
             />
             <TextField
+              id="description1"
+              label="Descripción"
+              variant="outlined"
+              color="primary"
+              onChange={(e) => setNewRoutineDescription1(e.target.value)}
+            />
+            <TextField
               id="settings1"
               label="Ajustes"
               variant="outlined"
@@ -161,6 +172,13 @@ const AddRoutineForm = () => {
               options={workouts}
               sx={{ width: 260 }}
               renderInput={(params) => <TextField {...params} label="Ejercicio" />}
+            />
+            <TextField
+              id="description2"
+              label="Descripción"
+              variant="outlined"
+              color="primary"
+              onChange={(e) => setNewRoutineDescription2(e.target.value)}
             />
             <TextField
               id="settings2"
@@ -179,6 +197,13 @@ const AddRoutineForm = () => {
               renderInput={(params) => <TextField {...params} label="Ejercicio" />}
             />
             <TextField
+              id="description3"
+              label="Descripción"
+              variant="outlined"
+              color="primary"
+              onChange={(e) => setNewRoutineDescription3(e.target.value)}
+            />
+            <TextField
               id="settings3"
               label="Ajustes"
               variant="outlined"
@@ -193,6 +218,13 @@ const AddRoutineForm = () => {
               options={workouts}
               sx={{ width: 260 }}
               renderInput={(params) => <TextField {...params} label="Ejercicio" />}
+            />
+            <TextField
+              id="description4"
+              label="Descripción"
+              variant="outlined"
+              color="primary"
+              onChange={(e) => setNewRoutineDescription4(e.target.value)}
             />
             <TextField
               id="settings4"
