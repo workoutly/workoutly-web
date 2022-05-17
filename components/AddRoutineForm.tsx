@@ -7,14 +7,15 @@ import { TextField } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Grid from '@mui/material/Grid';
+import Autocomplete from '@mui/material/Autocomplete';
 import { useState } from 'react';
 
 const AddRoutineForm = () => {
   const [newRoutineName, setNewRoutineName] = useState('');
-  const [newRoutineWorkout1, setNewRoutineWorkout1] = useState('');
   const [newRoutineSettings1, setNewRoutineSettings1] = useState('');
-  const [newRoutineWorkout2, setNewRoutineWorkout2] = useState('');
   const [newRoutineSettings2, setNewRoutineSettings2] = useState('');
+  const [newRoutineSettings3, setNewRoutineSettings3] = useState('');
+  const [newRoutineSettings4, setNewRoutineSettings4] = useState('');
 
   const workouts = [
     { label: 'Press de banca', muscle: 'Pectoral' },
@@ -27,6 +28,10 @@ const AddRoutineForm = () => {
   ];
 
   const createRoutine = () => {
+    const newRoutineWorkout1 = document.getElementById('workout1')!.value;
+    const newRoutineWorkout2 = document.getElementById('workout2')!.value;
+    const newRoutineWorkout3 = document.getElementById('workout3')!.value;
+    const newRoutineWorkout4 = document.getElementById('workout4')!.value;
     const newRoutine = {
       routine: {
         id: crypto.randomUUID(),
@@ -62,6 +67,36 @@ const AddRoutineForm = () => {
               },
             ],
           },
+          {
+            id: crypto.randomUUID(),
+            name: newRoutineWorkout3,
+            description: '-',
+            muscles: [
+              {
+                name: workouts.find((w) => w.label === newRoutineWorkout3)?.muscle,
+              },
+            ],
+            settings: [
+              {
+                name: newRoutineSettings3,
+              },
+            ],
+          },
+          {
+            id: crypto.randomUUID(),
+            name: newRoutineWorkout4,
+            description: '-',
+            muscles: [
+              {
+                name: workouts.find((w) => w.label === newRoutineWorkout4)?.muscle,
+              },
+            ],
+            settings: [
+              {
+                name: newRoutineSettings4,
+              },
+            ],
+          },
         ],
       },
     };
@@ -81,7 +116,7 @@ const AddRoutineForm = () => {
   };
 
   return (
-    <Accordion sx={{ m: 4 }}>
+    <Accordion sx={{ mr: 0, ml: 0, mt: 4 }}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"
@@ -104,12 +139,12 @@ const AddRoutineForm = () => {
         <hr />
         <Grid container justifyContent={'center'} spacing={2}>
           <Grid container justifyContent={'center'} item xs={8} sm={8} md={6} lg={4} xl={3}>
-            <TextField
+            <Autocomplete
+              disablePortal
               id="workout1"
-              label="Ejercicio"
-              variant="outlined"
-              color="primary"
-              onChange={(e) => setNewRoutineWorkout1(e.target.value)}
+              options={workouts}
+              sx={{ width: 260 }}
+              renderInput={(params) => <TextField {...params} label="Ejercicio" />}
             />
             <TextField
               id="settings1"
@@ -120,12 +155,12 @@ const AddRoutineForm = () => {
             />
           </Grid>
           <Grid container justifyContent={'center'} item xs={8} sm={8} md={6} lg={4} xl={3}>
-            <TextField
+            <Autocomplete
+              disablePortal
               id="workout2"
-              label="Ejercicio"
-              variant="outlined"
-              color="primary"
-              onChange={(e) => setNewRoutineWorkout2(e.target.value)}
+              options={workouts}
+              sx={{ width: 260 }}
+              renderInput={(params) => <TextField {...params} label="Ejercicio" />}
             />
             <TextField
               id="settings2"
@@ -133,6 +168,38 @@ const AddRoutineForm = () => {
               variant="outlined"
               color="primary"
               onChange={(e) => setNewRoutineSettings2(e.target.value)}
+            />
+          </Grid>
+          <Grid container justifyContent={'center'} item xs={8} sm={8} md={6} lg={4} xl={3}>
+            <Autocomplete
+              disablePortal
+              id="workout3"
+              options={workouts}
+              sx={{ width: 260 }}
+              renderInput={(params) => <TextField {...params} label="Ejercicio" />}
+            />
+            <TextField
+              id="settings3"
+              label="Ajustes"
+              variant="outlined"
+              color="primary"
+              onChange={(e) => setNewRoutineSettings3(e.target.value)}
+            />
+          </Grid>
+          <Grid container justifyContent={'center'} item xs={8} sm={8} md={6} lg={4} xl={3}>
+            <Autocomplete
+              disablePortal
+              id="workout4"
+              options={workouts}
+              sx={{ width: 260 }}
+              renderInput={(params) => <TextField {...params} label="Ejercicio" />}
+            />
+            <TextField
+              id="settings4"
+              label="Ajustes"
+              variant="outlined"
+              color="primary"
+              onChange={(e) => setNewRoutineSettings4(e.target.value)}
             />
           </Grid>
         </Grid>
